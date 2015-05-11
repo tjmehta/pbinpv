@@ -43,7 +43,7 @@ app.post('/upload', function (req, res, next) {
   var form = new multiparty.Form();
 
   form.on('part', function(part) {
-    if (!part.filename || path.basename(part.filename.toLowerCase()) === 'image') {
+    if (!part.filename || part.filename.toLowerCase() === 'image.jpg') {
       // iphone uploads are always named image.jpg...
       part.filename = 'image'+uuid()+path.extname(part.filename);
     }
