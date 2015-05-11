@@ -1,0 +1,32 @@
+{
+  "name": "pbinpv",
+  "version": "1.0.0",
+  "description": "priya and bhavesh photo uploader",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/pbinpv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjmehta/pbinpv/issues"
+  },
+  "homepage": "https://github.com/tjmehta/pbinpv",
+  "dependencies": {
+    "101": "^0.18.0",
+    "aws-sdk": "^2.1.27",
+    "connect-redis": "^2.3.0",
+    "cookies": "^0.5.0",
+    "dropzone": "^4.0.1",
+    "express": "^4.12.3",
+    "express-session": "^1.11.1",
+    "morgan": "^1.5.2",
+    "multiparty": "^4.1.2",
+    "s3-upload-stream": "^1.0.7",
+    "uuid": "^2.0.1"
+  }
+}

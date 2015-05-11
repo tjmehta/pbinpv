@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Priya & Bhavesh</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Alex+Brush|Pontano+Sans|Dancing+Script|Engagement' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./dropzone/basic.min.css">
+    <link rel="stylesheet" href="./dropzone/dropzone.min.css">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+      body {
+        background: url(bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black;
+        margin-top: 100px;
+      }
+      #upload-container {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 50px;
+      }
+      .dropzone {
+        background: none;
+        font-size: 40px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0px 0px 5px black;
+      }
+      .dropzone .dz-preview.dz-image-preview {
+        background: none;
+      }
+      .dropzone .dz-preview .dz-image {
+        background-color: gray;
+      }
+      .dz-success-mark svg g path {
+        fill: green;
+        opacity: 1;
+      }
+      .dz-error-mark svg g path {
+        fill: red;
+        opacity: 0.95;
+      }
+      .dz-preview:hover svg {
+        opacity: 0.1;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        color: white;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>
+        Priya and Bhavesh's<br/>
+        Wedding Photos
+      </h1>
+      <div id="upload-container">
+        <form action="/upload"
+          class="dropzone"
+          id="my-awesome-dropzone"></form>
+      </div>
+      <div class="footer">TJ © 2015</div>
+    </center>
+  </body>
+  <script src="./dropzone/dropzone.js"></script>
+  <script>
+  Dropzone.options.myAwesomeDropzone = {
+    paramName: "file", // The name that will be used to transfer the file
+    parallelUploads: 3, // MB
+    clickable: true,
+    dictDefaultMessage: 'Drop files here to upload or Click to select files',
+    maxFilesize: 1000,
+    withCredentials: true
+  };
+  </script>
+</html>
