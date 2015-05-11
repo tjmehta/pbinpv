@@ -43,6 +43,10 @@ app.post('/upload', function (req, res, next) {
   var form = new multiparty.Form();
 
   form.on('part', function(part) {
+    if (!part.filename || path.basename(part.filename.toLowerCase()) === 'image') {
+      // iphone uploads are always named image.jpg...
+      part.filename = 'image'+uuid()+'.'+path.extname(part.filename);
+    }
     var destPath = path.join(basePath, req.cookies.get('uuid') || Date.now().toString(), part.filename);
     s3Client.putObject({
       Bucket: bucket,
