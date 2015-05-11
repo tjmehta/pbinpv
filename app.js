@@ -40,6 +40,8 @@ var s3Client = new AWS.S3({
   // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
 });
 app.post('/upload', function (req, res, next) {
+  var form = new multiparty.Form();
+
   form.on('part', function(part) {
     var destPath = path.join(basePath, req.cookies.get('uuid') || Date.now().toString(), part.filename);
     s3Client.putObject({
@@ -63,10 +65,5 @@ app.post('/upload', function (req, res, next) {
 app.get('/session', function (req, res, next) {
   res.send(req.cookies.get('uuid'));
 });
-
-// TODO
-// app.get('/me/files', function (req, res, next) {
-//   s3Client
-// });
 
 module.exports = app;

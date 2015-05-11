@@ -28,10 +28,15 @@
         text-shadow: 1px 1px 2px black;
         margin-top: 100px;
       }
+      h1.mobile {
+        font-size: 75px;
+      }
       #upload-container {
-        width: 100%;
+        width: 90%;
         max-width: 600px;
         margin-top: 50px;
+        margin-bottom: 200px;
+        border: 1px solid white;
       }
       .dropzone {
         background: none;
@@ -80,14 +85,20 @@
     </center>
   </body>
   <script src="./dropzone/dropzone.js"></script>
+  <script src="./ismobile.min.js"></script>
   <script>
-  Dropzone.options.myAwesomeDropzone = {
-    paramName: "file", // The name that will be used to transfer the file
-    parallelUploads: 3, // MB
-    clickable: true,
-    dictDefaultMessage: 'Drop files here to upload or Click to select files',
-    maxFilesize: 1000,
-    withCredentials: true
-  };
+    Dropzone.options.myAwesomeDropzone = {
+      paramName: "file", // The name that will be used to transfer the file
+      parallelUploads: 3, // MB
+      clickable: true,
+      dictDefaultMessage: isMobile.any ?
+        'Click here to select photos and videos':
+        'Drop files photos to upload or Click here to select',
+      maxFilesize: 1000,
+      withCredentials: true
+    };
+    if (isMobile.any) {
+      document.querySelector('h1').classList.add('mobile');
+    }
   </script>
 </html>
