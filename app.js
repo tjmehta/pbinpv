@@ -7,7 +7,7 @@ var defaults = require('101/defaults');
 var pick = require('101/pick');
 var express = require('express');
 var uuid = require('uuid');
-var basePath = envIs('production') ? 'pbinpv' : 'pbinpv-test';
+var basePath = envIs('production') ? 'tns' : 'tns-test';
 function requireEnv (key) {
   if (!process.env[key]) {
     throw new Error('process.env.'+key+' is required!');
@@ -54,7 +54,7 @@ app.post('/upload', function (req, res, next) {
       ACL: 'public-read',
       Body: part,
       ContentLength: part.byteCount,
-    }, function(err, data) {
+    }, function(err) {
       if (err) {
         console.error(err.stack);
         return res.send(500, err.message);
