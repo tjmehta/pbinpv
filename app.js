@@ -7,7 +7,7 @@ var defaults = require('101/defaults');
 var pick = require('101/pick');
 var express = require('express');
 var uuid = require('uuid');
-var basePath = envIs('production') ? 'pbinpv' : 'pbinpv-test';
+var basePath = envIs('production') ? 'sgtp' : 'sgtp-test';
 function requireEnv (key) {
   if (!process.env[key]) {
     throw new Error('process.env.'+key+' is required!');
