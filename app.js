@@ -60,7 +60,7 @@ app.post('/upload', function (req, res, next) {
         return res.send(500, err.message);
       }
       res.end("OK");
-      console.log("https://s3.amazonaws.com/" + bucket + '/' + destPath);
+      // console.log("https://s3.amazonaws.com/" + bucket + '/' + destPath);
     });
   });
   form.parse(req);
