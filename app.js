@@ -15,7 +15,7 @@ function requireEnv (key) {
 }
 
 // env
-defaults(process.env, require('./config.json'));
+// defaults(process.env, require('./config.json'));
 requireEnv('S3_BUCKET');
 requireEnv('S3_KEY');
 requireEnv('S3_SECRET');
